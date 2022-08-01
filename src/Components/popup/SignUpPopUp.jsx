@@ -49,6 +49,7 @@ const SignupPopup = () => {
       });
       getUser();
       alert.success("Registration successful! please login");
+      setFormData({});
       setLogin(true);
 
 
@@ -89,6 +90,7 @@ const SignupPopup = () => {
     // getData();
     let flag = true;
     // console.log(user);
+    // console.log(formData);
     user.forEach(user => {
       if (
         user.email === formData.email &&
@@ -97,6 +99,7 @@ const SignupPopup = () => {
         localStorage.setItem("modesensUserId", user.id);
         getData(user.id);
         alert.success("login success");
+        setformData({});
         navigate("/");
         setIsAuth(true);
         flag = false;
@@ -168,7 +171,7 @@ const SignupPopup = () => {
                     placeholder="Email"
                     name="email"
                     className={style.email}
-                    // value={formData.email}
+                    value={formData.email}
                     onChange={handleChangeLogin}
                     required
                   />
@@ -178,7 +181,7 @@ const SignupPopup = () => {
                     name="password"
                     placeholder="Password"
                     className={style.password}
-                    // value={formData.password}
+                    value={formData.password}
                     onChange={handleChangeLogin}
                     required
                   />
@@ -247,7 +250,7 @@ const SignupPopup = () => {
                     placeholder="Email"
                     name="email"
                     className={style.email}
-                    // value={formData.email}
+                    value={FormData.email}
                     onChange={handleChange}
                     required
                   />
@@ -257,7 +260,7 @@ const SignupPopup = () => {
                     placeholder="Password"
                     className={style.password}
                     name="password"
-                    // value={formData.password}
+                    value={FormData.password}
                     onChange={handleChange}
                     required
                   />
