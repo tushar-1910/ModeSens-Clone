@@ -115,7 +115,7 @@ const Items = ({ props }) => {
   //_page=${page}&_limit=16
   async function getdata() {
     let datas = await fetch(
-      `http://localhost:8080/${category}?_page=${page}`
+      `https://modesens-web-app-backend.herokuapp.com/${category}?_page=${page}`
     );
 
     let data = await datas.json();

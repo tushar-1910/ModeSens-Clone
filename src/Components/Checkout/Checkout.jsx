@@ -18,7 +18,7 @@ function Checkout() {
   const emptyCart = async () => {
     try {
       let updatedCart = [];
-      await fetch(`http://localhost:8080/users/${userId}`, {
+      await fetch(`https://modesens-web-app-backend.herokuapp.com/users/${userId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -36,7 +36,7 @@ function Checkout() {
 
   const handleDeleteItemInCart = async(itemId) => {
     try {
-      let allCartData = await fetch(`http://localhost:8080/users/${userId}`);
+      let allCartData = await fetch(`https://modesens-web-app-backend.herokuapp.com/users/${userId}`);
       let allCartDataJson = await allCartData.json();
       let cart = allCartDataJson.cart;
       // let updatedCart = cart.filter(item => item.id !== itemId);
@@ -45,7 +45,7 @@ function Checkout() {
       let updatedCart = cart.filter((item,i) => i !== itemindex);
       // console.log(updatedCart);
       // let updatedCart = cart.splice(itemindex, 1);
-      await fetch(`http://localhost:8080/users/${userId}`, {
+      await fetch(`https://modesens-web-app-backend.herokuapp.com/users/${userId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -62,7 +62,7 @@ function Checkout() {
 
   const getData = async (userId) => {
     try {
-      let data = await fetch(`http://localhost:8080/users/${userId}`);
+      let data = await fetch(`https://modesens-web-app-backend.herokuapp.com/users/${userId}`);
       let result = await data.json();
       setCart(result.cart);
       setCartCount(result.cart.length);

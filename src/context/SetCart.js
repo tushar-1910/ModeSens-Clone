@@ -7,7 +7,7 @@ function CartCountContextProvider({ children }) {
     const userId = localStorage.getItem("modesensUserId") || null;
     const getData = async (userId) => {
         try {
-          let data = await fetch(`http://localhost:8080/users/${userId}`);
+          let data = await fetch(`https://modesens-web-app-backend.herokuapp.com/users/${userId}`);
           let result = await data.json();
           setCartCount(result.cart.length);
         } catch (error) {

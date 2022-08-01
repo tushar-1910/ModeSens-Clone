@@ -151,7 +151,7 @@ const ItemDetails = () => {
   // productId = "62aa267f9854adea94d64c50"
 
   React.useEffect(() => {
-    fetch(`http://localhost:8080${categorie}`)
+    fetch(`https://modesens-web-app-backend.herokuapp.com${categorie}`)
       .then((res) => res.json())
       .then((res) => {setProductData(res)});
     // console.log("productData", productData);
@@ -160,11 +160,11 @@ const ItemDetails = () => {
   let addToBag = (productData) => {
     
     let payload = productData;
-    fetch(`http://localhost:8080/users/${userId}`)
+    fetch(`https://modesens-web-app-backend.herokuapp.com/users/${userId}`)
       .then((res) => res.json())
       .then((res) => {
         // console.log(res.cart)
-        fetch(`http://localhost:8080/users/${userId}`, {
+        fetch(`https://modesens-web-app-backend.herokuapp.com/users/${userId}`, {
           method: "PATCH",
           body: JSON.stringify({
             cart: [...res.cart, payload],
