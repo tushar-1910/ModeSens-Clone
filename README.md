@@ -10,3 +10,6 @@
 <li>Checkout | Payment Page along with all Functionality</li>
 <li>Third-Party Integration for checking Card Details for Pay Via Card</li>
 </ul>
+<li>App URL : https://modesens-web-app-clone.netlify.app</li>
+<li>Backend URL: https://modesens-web-app-backend.herokuapp.com/</li>
+<li>GitHub Backend Repository: https://github.com/tushar-1910/modesens-web-app-backend</li>
