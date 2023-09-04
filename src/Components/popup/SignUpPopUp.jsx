@@ -36,7 +36,7 @@ const SignupPopup = () => {
     try {
 
       dispatch(getUserLoading());
-      let res = await fetch(`https://modesens-web-app-backend.herokuapp.com/users`,{
+      let res = await fetch(`https://modesens-backend.vercel.app/users`,{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -68,7 +68,7 @@ const SignupPopup = () => {
     try {
 
       dispatch(getUserLoading());
-      let res = await fetch(`https://modesens-web-app-backend.herokuapp.com/users`);
+      let res = await fetch(`https://modesens-backend.vercel.app/users`);
       let data = await res.json();
       dispatch(getUserData(data))
 
